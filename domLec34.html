@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:black; color:white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+ 
+    <script>
+
+
+
+    // function addLanguage(langName){
+    //     const li=document.createElement("li");
+    //     li.innerText=langName;
+    //     // const par=document.getElementsByClassName("language")[0];          or
+    //     const par=document.querySelector(".language");
+    //     console.log(par);
+    //     par.appendChild(li);
+    //     }
+    // addLanguage("Ruby");
+    // addLanguage("C++");
+    // addLanguage("C");
+
+
+
+    function addLanguage(langName){
+        const li=document.createElement("li");
+        li.appendChild(document.createTextNode(langName));
+        // const par=document.getElementsByClassName("language")[0];          or
+        // const par=document.querySelector(".language");
+        // console.log(par);
+        document.getElementsByClassName("language")[0].appendChild(li);
+        }
+    addLanguage("Ruby");
+    addLanguage("C++");
+    addLanguage("C");
+
+
+    
+//Edit:
+
+const secondLang=document.querySelector("li:nth-child(2)")
+// console.log(secondLang);
+secondLang.innerHTML="MOJO"
+
+const newLi=document.createElement("li");
+newLi.appendChild(document.createTextNode("Java"));
+secondLang.replaceWith(newLi);
+
+
+document.createElement("li").innerText="TypeScript" //this returns string and not node or new list element
+const newLi2=document.createElement("li")
+newLi2.innerText="TypeScript"
+document.getElementsByClassName("language")[0].children[0].replaceWith(newLi2)
+
+
+const secondLi=document.querySelector("li:nth-child(2)");
+secondLi.innerHTML="Golang";
+secondLi.remove()
+
+
+const firstLang=document.querySelector("li:first-child");
+firstLang.innerHTML='<li>C#</li>'
+
+
+</script>
+</body>
+</html>
